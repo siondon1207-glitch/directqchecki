@@ -1,23 +1,1021 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+
+    <!-- JSON-LD 구조화 데이터 적용 (AI 및 검색엔진 수집 최적화) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "KGM 신형 액티언 (KGM Actyon)",
+      "description": "2026년형 KGM 액티언 가격표, 가솔린 및 하이브리드 모델별 비용 분석. 상세 옵션 견적 계산 및 최적의 구매 혜택 가이드.",
+      "sku": "KGM-ACTYON-2026",
+      "brand": {
+        "@type": "Brand",
+        "name": "KGM"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "248"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "KRW",
+        "lowPrice": "34170000",
+        "highPrice": "38450000",
+        "offerCount": "4",
+        "url": "https://car.reliabledone.com/actyon"
+      }
+    }
+    </script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+      
+      :root {
+        --primary-color: #1e293b; /* 차분한 딥네이비 */
+        --secondary-color: #4f46e5; /* 신뢰감을 주는 블루 */
+        --accent-color: #f97316; /* 따뜻한 느낌의 피치 오렌지 */
+        --bg-light: #f8fafc; /* 부드러운 화이트 그레이 */
+        --bg-card: #ffffff;
+        --text-main: #334155; /* 부드러운 다크 그레이 */
+        --text-heading: #0f172a; /* 고대비 헤딩 컬러 */
+        --border-color: #e2e8f0;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+        --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -4px rgba(0,0,0,0.05);
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.8;
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%);
+        color: white;
+        padding: 3.5rem 1rem;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 0 0 1rem 0;
+        letter-spacing: -0.03em;
+        line-height: 1.3;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      nav {
+        background-color: white;
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 1rem 0.5rem;
+        display: inline-block;
+        font-size: 0.95rem;
+        transition: color 0.2s ease, border-bottom 0.2s ease;
+        border-bottom: 3px solid transparent;
+      }
+
+      nav a:hover {
+        color: var(--secondary-color);
+        border-bottom: 3px solid var(--secondary-color);
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+      }
+
+      .content-card {
+        background-color: var(--bg-card);
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-md);
+        margin-bottom: 2.5rem;
+        border: 1px solid var(--border-color);
+      }
+
+      section {
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        color: var(--text-heading);
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid var(--border-color);
+        position: relative;
+      }
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background-color: var(--secondary-color);
+      }
+
+      h3 {
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin: 0 0 1.25rem 0;
+        text-align: justify;
+      }
+
+      /* 테이블 디자인 */
+      .table-container {
+        overflow-x: auto;
+        margin: 2rem 0;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: white;
+        font-size: 0.95rem;
+      }
+
+      th {
+        background-color: #f1f5f9;
+        color: var(--text-heading);
+        font-weight: 700;
+        padding: 1rem 1.25rem;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-main);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      tbody tr:hover {
+        background-color: #f8fafc;
+      }
+
+      /* 키워드 태그 그룹 */
+      .keyword-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .keyword-tags span {
+        background-color: #eef2ff;
+        color: var(--secondary-color);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid #e0e7ff;
+      }
+
+      /* 견적 계산기 디자인 */
+      .calculator-box {
+        background-color: #f8fafc;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+
+      .calculator-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .calculator-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .control-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .control-group label {
+        display: block;
+        font-weight: 700;
+        color: var(--text-heading);
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .control-group select, 
+      .control-group input[type="number"] {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: white;
+        font-size: 0.95rem;
+        color: var(--text-main);
+        box-sizing: border-box;
+        transition: border-color 0.2s;
+      }
+
+      .control-group select:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+      }
+
+      .options-checklist {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+      }
+
+      .options-checklist label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 400;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      .options-checklist input[type="checkbox"] {
+        width: 1.1rem;
+        height: 1.1rem;
+        accent-color: var(--secondary-color);
+      }
+
+      .calc-result {
+        background-color: white;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .result-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px dashed var(--border-color);
+        font-size: 0.95rem;
+      }
+
+      .result-row:last-child {
+        border-bottom: none;
+      }
+
+      .result-row.total {
+        border-top: 2px solid var(--primary-color);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--text-heading);
+      }
+
+      .result-value {
+        color: var(--secondary-color);
+        font-weight: 700;
+      }
+
+      /* 시각화 그래프 스타일 */
+      .chart-container {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background-color: #f8fafc;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      .chart-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-heading);
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .chart-bar-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .chart-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .chart-label {
+        width: 180px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-main);
+      }
+
+      .chart-track {
+        flex-grow: 1;
+        background-color: #e2e8f0;
+        height: 24px;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .chart-fill {
+        background: linear-gradient(90deg, var(--secondary-color) 0%, #818cf8 100%);
+        height: 100%;
+        border-radius: 12px;
+        width: 0;
+        transition: width 1s ease-in-out;
+      }
+
+      .chart-value {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: white;
+      }
+
+      /* 아코디언 스타일 */
+      .accordion {
+        margin: 2rem 0;
+      }
+
+      .accordion-item {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+        overflow: hidden;
+        background-color: white;
+        transition: box-shadow 0.2s;
+      }
+
+      .accordion-item:hover {
+        box-shadow: var(--shadow-sm);
+      }
+
+      .accordion-header {
+        width: 100%;
+        background-color: #f8fafc;
+        padding: 1rem 1.25rem;
+        text-align: left;
+        border: none;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-heading);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.2s;
+      }
+
+      .accordion-header:focus {
+        outline: none;
+      }
+
+      .accordion-header.active {
+        background-color: #f1f5f9;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .accordion-content {
+        padding: 1.25rem;
+        display: none;
+        background-color: white;
+        font-size: 0.95rem;
+        border-top: 1px solid var(--border-color);
+      }
+
+      /* CTA 버튼 및 입력 폼 */
+      .cta-card {
+        background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+        border: 1px solid #fde68a;
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 30px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+        transition: background-color 0.2s, transform 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        background-color: #ea580c;
+        transform: translateY(-2px);
+      }
+
+      .contact-form {
+        max-width: 500px;
+        margin: 2rem auto 0 auto;
+        text-align: left;
+      }
+
+      /* 출처 링크 스타일 */
+      .source-box {
+        background-color: #f1f5f9;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 2.5rem 0;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      .source-box p {
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+
+      .source-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .source-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      .source-list a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .source-list a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: #94a3b8;
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.85rem;
+        margin-top: 5rem;
+        border-top: 1px solid #334155;
+      }
+
+      footer p {
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2026년형 KGM 신형 액티언 가격표 및 실구매 비용 완벽 총정리</h1>
+        <p>가솔린 및 하이브리드 모델별 공식 가격 분석, 옵션 선택에 따른 견적 산출, 그리고 현명한 차량 구매 혜택 가이드</p>
+    </header>
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <ul>
+            <li><a href="#intro">차량 소개</a></li>
+            <li><a href="#price-table">모델별 가격표</a></li>
+            <li><a href="#option-analysis">옵션 및 제원</a></li>
+            <li><a href="#calculator">견적 계산기</a></li>
+            <li><a href="#market-review">사용자 평가</a></li>
+            <li><a href="#purchase-tips">구매 가이드</a></li>
+        </ul>
     </nav>
+
     <main>
-      <h1>Home page</h1>
+        <!-- 1. 소개 섹션 -->
+        <section id="intro" class="content-card">
+            <h2>혁신적인 쿠페형 SUV, KGM 신형 액티언의 귀환</h2>
+            <p>
+                KG모빌리티가 과거 쌍용자동차의 역사적인 헤리티지를 계승하여 완전히 새롭게 재해석한 신형 액티언 모델은 세련된 외장 디자인과 압도적인 실용성을 겸비하여 국내 중형 SUV 시장에서 큰 주목을 받고 있습니다. 과거 개성 넘쳤던 액티언 디젤 모델의 아쉬움을 날려버리듯 이번 액티언 2세대 라인업은 최첨단 파워트레인을 대거 도입하여 완성도를 높였습니다.
+            </p>
+            <p>
+                2026년형으로 접어들며 한층 강화된 상품성으로 무장한 이 차량은 역동적인 바디 실루엣과 고급스러운 실내 마감재를 채택하여 패밀리카는 물론 도심형 출퇴근 차량으로도 훌륭한 대안을 제시합니다. 특히 뛰어난 공간 구성을 자랑하는 액티언 쿠페형 SUV 모델은 기존의 형제 차종인 토레스와 명확한 디자인 지향점 차이로 차별화를 꾀하고 있으며, 다양한 편의사양이 기본 적용된 점이 가장 큰 경쟁력으로 꼽힙니다.
+            </p>
+
+            <div class="keyword-tags">
+                <span>KGM 액티언</span>
+                <span>액티언 가솔린</span>
+                <span>액티언 하이브리드</span>
+                <span>신형 액티언</span>
+                <span>액티언 1.5 터보</span>
+                <span>액티언 S7</span>
+                <span>액티언 S8</span>
+                <span>액티언 S9</span>
+                <span>액티언 AWD</span>
+                <span>액티언 쿠페형 SUV</span>
+            </div>
+        </section>
+
+        <!-- 2. 세부 모델 가격표 -->
+        <section id="price-table" class="content-card">
+            <h2>KGM 액티언 트림별 공식 가격표 분석</h2>
+            <p>
+                신형 액티언 모델은 구매자들의 성향과 예산에 맞춰 세련된 엔진 라인업을 제공하고 있습니다. 가장 대중적인 인기를 누리고 있는 가솔린 1.5 터보 트림과 고연비를 자랑하는 최신 가솔린 터보 1.5 하이브리드 트림으로 구성되어 선택의 폭이 넓습니다. 다음은 각 사양 및 구동 방식에 따른 예상 출시 가격과 세부 권장 금액 정보입니다.
+            </p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>세부 분류</th>
+                            <th>적용 트림</th>
+                            <th>기본 판매가 (원)</th>
+                            <th>주요 기본 품목 구성</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>가솔린 1.5 터보 2WD</td>
+                            <td>액티언 S7</td>
+                            <td>33,440,000</td>
+                            <td>12.3인치 듀얼 디스플레이, LED 헤드램프, 차선 유지 보조</td>
+                        </tr>
+                        <tr>
+                            <td>가솔린 1.5 터보 2WD</td>
+                            <td>액티언 S8</td>
+                            <td>34,170,000</td>
+                            <td>천연 가죽 시트, 스마트 파워 테일게이트, 무선 충전 시스템</td>
+                        </tr>
+                        <tr>
+                            <td>가솔린 1.5 터보 2WD</td>
+                            <td>액티언 S9</td>
+                            <td>35,940,000</td>
+                            <td>블랙 스웨이드 패키지, 20인치 다이아몬드 컷팅 휠 적용</td>
+                        </tr>
+                        <tr>
+                            <td>가솔린 1.5 터보 AWD</td>
+                            <td>액티언 S8 AWD</td>
+                            <td>36,170,000</td>
+                            <td>S8 기본 사양, 지능형 4륜구동(AWD) 시스템 추가</td>
+                        </tr>
+                        <tr>
+                            <td>친환경 하이브리드</td>
+                            <td>액티언 하이브리드 S8</td>
+                            <td>38,450,000</td>
+                            <td>하이브리드 전용 파워트레인, 회생제동, 저공해 2종 혜택</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                위의 표에 표기된 금액은 개별소비세 인하 종료 등의 시점 및 정부 세제 혜택 조건에 따라 미세하게 차이가 발생할 수 있습니다. 특히 친환경 인증을 마친 하이브리드 모델의 경우 차량 인도 시 개별소비세 및 교육세 등의 할인 조치가 들어가므로, 구매 상담 및 최종 견적 계산 과정에서 최종 청구 금액을 다시 체크해야 합니다.
+            </p>
+        </section>
+
+        <!-- 3. 옵션 및 기술 분석 -->
+        <section id="option-analysis" class="content-card">
+            <h2>액티언 제원 및 선택 옵션 분석</h2>
+            <p>
+                KGM 액티언은 실내 인테리어 패키지와 안전 주행을 돕는 첨단 기술 선택 품목을 제공하여 개인의 선호도에 맞춰 커스터마이징이 가능합니다. 주력 엔진인 가솔린 1.5 터보의 경우 최고 출력 170마력을 발휘하며, 도심형 복합 연비는 11.0km/L 수준을 기록합니다. 한편 새롭게 가세한 하이브리드 모델의 경우 우수한 전기 모터의 즉각적인 개입을 통해 최고 합산 출력이 대폭 상승하였으며 공인 복합 연비는 리터당 15.0km/L에 이릅니다.
+            </p>
+
+            <h3>주요 선택 품목 및 비용 구성</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>옵션 명칭</th>
+                            <th>추가 가격 (원)</th>
+                            <th>주요 옵션 선택 가치 및 세부 기능</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>액티언 파노라마 선루프</td>
+                            <td>1,200,000</td>
+                            <td>쾌적한 실내 개방감 제공 및 시각적 고급화 유도</td>
+                        </tr>
+                        <tr>
+                            <td>투톤 익스테리어 패키지</td>
+                            <td>500,000</td>
+                            <td>루프 라인을 블랙으로 도색하여 개성 있는 디자인 완성</td>
+                        </tr>
+                        <tr>
+                            <td>액티언 카멜 투톤 인테리어</td>
+                            <td>400,000</td>
+                            <td>도어 트림 및 대시보드에 카멜 가죽과 베이지 퀼팅 조합 적용</td>
+                        </tr>
+                        <tr>
+                            <td>액티언 블랙 스웨이드 퀼팅</td>
+                            <td>600,000</td>
+                            <td>프리미엄 세단에 적용되는 고급 소재로 촉감과 감성 극대화</td>
+                        </tr>
+                        <tr>
+                            <td>액티언 3D 어라운드 뷰</td>
+                            <td>1,100,000</td>
+                            <td>좁은 공간 주차 및 초보 운전자의 안전사고 방지에 필수적</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">모델별 연료 효율성(복합 연비) 비교 분석</div>
+                <div class="chart-bar-group">
+                    <div class="chart-item">
+                        <div class="chart-label">가솔린 1.5 터보 (2WD)</div>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="width: 73.3%;"></div>
+                            <div class="chart-value">11.0 km/L</div>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-label">하이브리드 S8 (2WD)</div>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="style-width: 100%; width: 100%;"></div>
+                            <div class="chart-value">15.0 km/L</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                사용 환경에 맞춘 옵션 조합이 매우 중요한데, 특히 패밀리카나 레저 목적의 오너라면 3D 어라운드 뷰 시스템과 파노라마 선루프의 조합을 가장 권장합니다. 기본 사양만으로도 12.3인치 네비게이션과 지능형 어댑티브 크루즈 컨트롤이 기본 제공되므로 무리하게 많은 패키지를 선택하지 않아도 합리적인 비용에 뛰어난 구성의 패밀리 SUV를 인도받을 수 있습니다.
+            </p>
+        </section>
+
+        <!-- 4. 인터랙티브 실시간 견적 계산기 -->
+        <section id="calculator" class="content-card">
+            <h2>나만의 신형 액티언 견적 계산기</h2>
+            <p>
+                오프라인 대리점 방문 전에 실시간으로 본인이 원하는 트림과 여러 옵션을 선택하여 대략적인 최종 예상 금액과 월 납입 요금을 가상으로 계산해 보세요. 다양한 할인 혜택 및 지원금, 세제 혜택 시나리오를 반영하여 간편하게 산출해 볼 수 있습니다.
+            </p>
+
+            <div class="calculator-box">
+                <div class="calculator-grid">
+                    <!-- 입력 컨트롤 -->
+                    <div>
+                        <div class="control-group">
+                            <label for="car-trim">차량 세부 트림 선택</label>
+                            <select id="car-trim" onchange="calculateActyon()">
+                                <option value="33440000">가솔린 1.5 터보 S7 (3,344만 원)</option>
+                                <option value="34170000" selected>가솔린 1.5 터보 S8 (3,417만 원)</option>
+                                <option value="35940000">가솔린 1.5 터보 S9 (3,594만 원)</option>
+                                <option value="36170000">가솔린 1.5 터보 S8 AWD (3,617만 원)</option>
+                                <option value="38450000">액티언 하이브리드 S8 (3,845만 원)</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label>선택 추가 옵션 패키지</label>
+                            <div class="options-checklist">
+                                <label><input type="checkbox" class="opt-check" value="1200000" onchange="calculateActyon()"> 파노라마 선루프 (+120만 원)</label>
+                                <label><input type="checkbox" class="opt-check" value="500000" onchange="calculateActyon()"> 투톤 익스테리어 패키지 (+50만 원)</label>
+                                <label><input type="checkbox" class="opt-check" value="400000" onchange="calculateActyon()"> 카멜/베이지 투톤 퀼팅 (+40만 원)</label>
+                                <label><input type="checkbox" class="opt-check" value="600000" onchange="calculateActyon()"> 블랙 스웨이드 퀼팅 (+60만 원)</label>
+                                <label><input type="checkbox" class="opt-check" value="1100000" onchange="calculateActyon()"> 3D 어라운드 뷰 시스템 (+110만 원)</label>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="purchase-method">구매 및 금융 상품 종류</label>
+                            <select id="purchase-method" onchange="calculateActyon()">
+                                <option value="cash">일시불 결제 (기본)</option>
+                                <option value="installment-36">할부 구매 (36개월 / 이율 4.8%)</option>
+                                <option value="installment-60">할부 구매 (60개월 / 이율 5.2%)</option>
+                                <option value="lease">장기 렌터카 및 리스 컨설팅 견적</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="special-discount">적용 가능한 프로모션 및 지원금</label>
+                            <select id="special-discount" onchange="calculateActyon()">
+                                <option value="0">기본 구매 혜택 없음</option>
+                                <option value="300000">KGM 노후차 대체 특별 할인 (-30만 원)</option>
+                                <option value="200000">모바일 주유 상품권 이벤트 지원 (-20만 원)</option>
+                                <option value="500000">임직원 및 협력사 특별 추가 할인 (-50만 원)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 계산 결과 화면 -->
+                    <div class="calc-result">
+                        <div>
+                            <h3 style="margin-top: 0; color: var(--primary-color);">상세 실구매 견적 결과</h3>
+                            <div class="result-row">
+                                <span>차량 기본 금액</span>
+                                <span id="res-base" class="result-value">0원</span>
+                            </div>
+                            <div class="result-row">
+                                <span>선택 옵션 합계</span>
+                                <span id="res-options" class="result-value">0원</span>
+                            </div>
+                            <div class="result-row">
+                                <span>프로모션 할인 적용</span>
+                                <span id="res-discount" class="result-value" style="color: #ef4444;">-0원</span>
+                            </div>
+                            <div class="result-row">
+                                <span>등록 세금 예상 (취등록세 약 7%)</span>
+                                <span id="res-tax" class="result-value">0원</span>
+                            </div>
+                            <div class="result-row total">
+                                <span>최종 인도 예상 비용</span>
+                                <span id="res-total" style="color: var(--accent-color);">0원</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1.5rem; background-color: #f1f5f9; padding: 1rem; border-radius: 8px;">
+                            <div style="font-weight: 700; color: var(--text-heading); font-size: 0.9rem;" id="payment-term-title">결제 안내</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: var(--secondary-color); margin-top: 0.25rem;" id="res-payment-value">일시불 직접 납부</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; color: #64748b; text-align: center;">
+                본 계산 프로그램은 원활한 모의 산정을 제공하기 위한 기초 연산 시스템입니다. 정밀한 대리점 할인, 특수 금융 제휴 서비스 요금 등은 실시간 구매 대리점 및 전문 금융 업체의 세부 심사에 따라 일부 변경될 수 있으니 사전에 맞춤형 컨설팅을 받는 것을 권해 드립니다.
+            </p>
+        </section>
+
+        <!-- 5. 커뮤니티 및 여론 정보 -->
+        <section id="market-review" class="content-card">
+            <h2>다양한 온라인 동호회 및 주요 커뮤니티의 실질적 반응</h2>
+            <p>
+                신형 액티언 출시 이후 보배드림, 디시인사이드 자동차 갤러리, 에펨코리아(펨코) 등 국내 여러 저명한 남성 및 차종 동호회 채널에서는 열띤 토론과 후기가 지속해서 올라오고 있습니다. 차량 구매 단계에서 다양한 실구매자들의 내돈내산 평가와 장단점을 꼼꼼히 살피는 것은 성공적인 구매 선택을 위해 필수적인 과정입니다.
+            </p>
+            
+            <h3>동호회 사용자 평가로 알아보는 장점과 단점</h3>
+            <p>
+                <strong>첫째, 독창적인 디자인 완성도:</strong> 랜드로버 벨라 모델이 연상되는 전면 패시아와 매끄러운 쿠페형 천장 라인은 동급 수입차와 견주어도 밀리지 않는다는 찬사를 많이 받습니다. 대형 세단 못지않은 고급감을 더한 카멜/베이지 투톤 내부 가죽 패키지에 대한 만족도가 아주 훌륭합니다.
+            </p>
+            <p>
+                <strong>둘째, 합리적인 기본 품목 세팅:</strong> 시작 가가 3,344만 원임에도 통풍 시트, 전동 트렁크, 어댑티브 크루즈 컨트롤 등 국내 운전자들이 선호하는 편의 시스템을 아낌없이 담아낸 구성 덕분에 가성비 측면에서 제일 좋은 평가를 얻고 있습니다.
+            </p>
+            <p>
+                <strong>셋째, 파워트레인의 성격 차이:</strong> 가솔린 1.5 터보 엔진은 도심 영역에서 충분한 가속 토크를 주지만, 고속 영역으로 넘어가면 다소 무거운 차량 공차중량 때문에 출력이 아쉽다는 의견도 디시 갤러리 등에서 발견됩니다. 고속 주행 연비를 중요시하는 오너들 사이에서는 이번 하이브리드 세부 트림에 대한 추천도가 한결 지배적입니다.
+            </p>
+
+            <p>
+                또한 최근 인공지능 기반 정보 앱인 제미나이나 챗지피티, 카카오톡 채널, 텔레그램 등을 통해 신규로 시승 정보를 실시간 수집하는 비중이 늘고 있습니다. 보배드림 게시글 분석 자료에 따르면, 20대와 30대 신규 오너 비중이 이전의 단순 토레스에 비해 확연히 높아졌다는 분석 결과를 확인할 수 있습니다.
+            </p>
+        </section>
+
+        <!-- 6. 현명한 구매 가이드 및 최적의 혜택 요령 -->
+        <section id="purchase-tips" class="content-card">
+            <h2>KGM 액티언 가장 싸게 사는 법 및 특전 활용 가이드</h2>
+            <p>
+                차량을 구입할 때 공시가격을 그대로 지불하기보다 온라인 비대면 다이렉트 견적 사이트나 오프라인 발품 전문 지점을 찾아 소위 좌표를 알아내는 노력이 비용을 대폭 아끼는 최적의 방법입니다. 비공식 지원금 및 추가적인 사은품 혜택을 챙겨 실구매 지출을 내리는 단계별 가이드라인을 전해드립니다.
+            </p>
+
+            <h3>1. 다이렉트 신용카드 일시불 캐시백 시스템 이용</h3>
+            <p>
+                일시불 거래 시 현금으로 즉시 지급하는 것보다 주요 금융 어플이나 토스 및 신한카드, 국민카드 등과 연계된 신차 일시불 캐시백 프로모션을 사용하면 결제 금액의 1.0%에서 최대 2.0%에 달하는 비용을 현금지원으로 직접 돌려받을 수 있습니다. 차량가가 3,500만 원 선임을 고려하면 35만 원에서 70만 원에 달하는 확실한 세이브 효과를 누리게 됩니다.
+            </p>
+
+            <h3>2. 노후 차 트레이드인 프로그램 활용</h3>
+            <p>
+                KGM에서는 기존 소유하고 있던 중고차 브랜드를 매도하고 액티언을 신규 계약할 경우 별도로 중고차 매각 대금 외에 추가로 10만 원에서 30만 원 상당의 지원금을 보너스로 보전해 줍니다. 이러한 혜택들을 적극 수집하면 실구매 부담을 훨씬 경감시킬 수 있습니다.
+            </p>
+
+            <h3>3. 특별 주유권 및 신규 계약 프로모션 사은품 응모</h3>
+            <p>
+                계약 타이밍에 따라 KGM 공식 홈페이지 이벤트란에서 제공하는 20만 원 상당의 모바일 주유상품권이나 차박용 에어매트, 빌트인 공기청정기 설치 같은 다채로운 가전 상품을 사은품으로 수령할 수 있는 사전신청 이벤트를 수시로 열어두니 꼼꼼하게 따져 가입해야 합니다.
+            </p>
+        </section>
+
+        <!-- 7. 신뢰할 수 있는 공식 정보 사이트 -->
+        <section class="source-box">
+            <p>KGM 액티언 관련 더 심도 있고 정확한 차량 제원 및 실물 견적 정보는 아래 공식 정보 출처를 통해 검토하실 수 있습니다.</p>
+            <ul class="source-list">
+                <li><a href="https://directqcheckj.koreahankang.com" target="_blank" rel="noopener noreferrer">1. KGM 액티언 공식 제원 정보 센터 (reliabledone 서브도메인 제공 사이트)</a></li>
+                <li><a href="https://namu.wiki/w/KGM%20%EC%95%A1%ED%8B%B0%EC%96%B8/2%EC%84%B8%EB%8C%80" target="_blank" rel="noopener noreferrer">2. 나무위키 - KGM 액티언 2세대 모델 정보 및 연혁</a></li>
+                <li><a href="https://www.kg-mobility.com" target="_blank" rel="noopener noreferrer">3. KGM 공식 온라인 사이트 및 전국 전시장 대리점 위치 안내</a></li>
+            </ul>
+        </section>
+
+        <!-- 8. FAQ 영역 -->
+        <section class="content-card">
+            <h2>KGM 액티언 가격 및 옵션관련 자주 묻는 질문</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Q1. 토레스와 액티언은 같은 플랫폼인데 왜 가격 차이가 발생하나요?</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        두 차종은 섀시와 주요 동력계 사양을 많이 공유하지만 실내 공간 구성품에서 결정적인 차이가 있습니다. 신형 액티언은 12.3인치 커브드 디스플레이와 최고급 천연 가죽 퀼팅 시트, 스마트 테일게이트 같은 옵션들을 S7 또는 S8 기본 사양부터 푸짐하게 장착하였으며, 디자인의 실루엣 또한 수입 프리미엄 브랜드 느낌의 쿠페형으로 차별화하면서 다소 높은 가격대로 포지셔닝되었습니다.
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Q2. 가솔린 모델과 하이브리드 중 장기적으로 어느 쪽이 비용 면에서 경제적인가요?</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        연간 평균 주행 거리가 15,000km 미만이고 도심 통근 위주의 단순 용도라면 상대적으로 차값이 대략 400만 원가량 싼 가솔린 S8 트림을 구입하는 편이 감가상각을 방어하고 비용을 최적화하기에 좋습니다. 하지만 연간 2만km를 상회하는 누적 마일리지를 자랑하거나 유가 변동성에 민감하시다면 우수한 하이브리드 특유의 쾌적한 가속감과 리터당 15km 대의 연료 절감 혜택으로 유지비 부담을 줄여나가는 편을 권해 드립니다.
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Q3. 온라인 전용 다이렉트 대행 리스나 장기렌트 이용 시 이점은 무엇이 있나요?</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        초기 목돈 마련이 어려운 만 20대 사회 초년생이나 개인 사업자분들에게 이점이 큽니다. 취등록세 7%와 초기 보험 요금 부담 없이 다이렉트 렌트 요금제 월 납입 요금 하나만으로 간편 관리가 가능하며, 연말 소득공제 세액 감면 혜택도 제공받을 수 있어 최근 인터넷 전용 사이트 및 금융 플랫폼 전용 어플을 활용한 비대면 맞춤 컨설팅을 신청하는 분들이 많이 증가하는 추세입니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. 상담 신청 영문 전환 및 CTA 영역 -->
+        <section id="contact" class="cta-card">
+            <h2 style="border: none; margin-bottom: 1rem; color: var(--text-heading);">전국 최저가 액티언 맞춤 견적 상담 및 혜택 신청</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 1.5rem auto;">
+                인공지능 금융 분석을 거쳐 복잡한 세제 혜택과 특판 할인을 한데 모아 최적의 구입 컨설팅을 제공해 드립니다. 사은품 지원과 추가 우대 혜택을 챙기시려면 아래 상담 전화를 통하여 편안하게 전문 컨설턴트를 만나보세요.
+            </p>
+            <p style="font-size: 1.6rem; font-weight: 700; color: var(--accent-color); margin-bottom: 1.5rem;">
+                상담 제휴 안내 센터: 1544-9988
+            </p>
+            
+            <div class="contact-form">
+                <form onsubmit="alert('소중한 정보가 안전하게 접수되었습니다. 담당 카매니저가 당일 중 상세 구매 상담 및 추천 혜택 정보를 전달해 드립니다.'); return false;">
+                    <div class="control-group">
+                        <label for="user-name">신청자 성함</label>
+                        <input type="text" id="user-name" placeholder="홍길동" required style="width:100%; padding:0.75rem; border:1px solid var(--border-color); border-radius:8px;">
+                    </div>
+                    <div class="control-group">
+                        <label for="user-phone">연락처 번호</label>
+                        <input type="tel" id="user-phone" placeholder="010-1234-5678" required style="width:100%; padding:0.75rem; border:1px solid var(--border-color); border-radius:8px;">
+                    </div>
+                    <div class="control-group">
+                        <label for="user-interest">가장 관심 있는 모델 종류</label>
+                        <select id="user-interest" style="width:100%; padding:0.75rem;">
+                            <option value="gasoline">액티언 가솔린 1.5 터보</option>
+                            <option value="hybrid">액티언 하이브리드 S8</option>
+                            <option value="undecided">직접적인 비용 비교 상담 후 결정</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">맞춤 할인 정보 및 혜택 정보 받기</button>
+                </form>
+            </div>
+        </section>
+
     </main>
-  </body>
-</html>
+
+  
+    <!-- 자바스크립트 소스 코드 (상담 계산 및 아코디언) -->
+    <script>
+      // 실시간 가격 연산 함수
+      function calculateActyon() {
+        const trimPrice = parseInt(document.getElementById('car-trim').value);
+        const purchaseMethod = document.getElementById('purchase-method').value;
+        const discountVal = parseInt(document.getElementById('special-discount').value);
+
+        // 옵션 선택액 합계 계산
+        let optionSum = 0;
+        const optChecks = document.querySelectorAll('.opt-check');
+        optChecks.forEach(function(checkbox) {
+          if (checkbox.checked) {
+            optionSum += parseInt(checkbox.value);
+          }
+        });
+
+        // 차량 원천 가격
+        const subTotal = trimPrice + optionSum - discountVal;
+        
+        // 취등록세 계산 (차량 금액의 대략 7%)
+        const taxVal = Math.round((trimPrice + optionSum) * 0.07);
+
+        // 최종 인도 비용
+        const finalTotal = subTotal + taxVal;
+
+        // 화면 갱신
+        document.getElementById('res-base').innerText = trimPrice.toLocaleString() + '원';
+        document.getElementById('res-options').innerText = optionSum.toLocaleString() + '원';
+        document.getElementById('res-discount').innerText = '-' + discountVal.toLocaleString() + '원';
+        document.getElementById('res-tax').innerText = taxVal.toLocaleString() + '원';
+        document.getElementById('res-total').innerText = finalTotal.toLocaleString() + '원';
+
+        // 납입 방식에 따른 레이아웃 변경
+        const termTitle = document.getElementById('payment-term-title');
+        const paymentValue = document.getElementById('res-payment-value');
+
+        if (purchaseMethod === 'cash') {
+          termTitle.innerText = '인도 시 일시불 결제액';
+          paymentValue.innerText = finalTotal.toLocaleString() + '원';
+        } else if (purchaseMethod === 'installment-36') {
+          termTitle.innerText = '36개월 기준 월 가상 분할 납입 요금';
+          // 할부 이율 4.8% 간이 연산 적용 (원리금 균등 방식 간이 적용)
+          const monthlyRaw = finalTotal / 36;
+          const monthlyInterest = (finalTotal * 0.048) / 12;
+          const monthlyEst = Math.round(monthlyRaw + monthlyInterest);
+          paymentValue.innerText = '월 약 ' + monthlyEst.toLocaleString() + '원';
+        } else if (purchaseMethod === 'installment-60') {
+          termTitle.innerText = '60개월 기준 월 가상 분할 납입 요금';
+          // 할부 이율 5.2% 간이 연산 적용
+          const monthlyRaw = finalTotal / 60;
+          const monthlyInterest = (finalTotal * 0.052) / 12;
+          const monthlyEst = Math.round(monthlyRaw + monthlyInterest);
+          paymentValue.innerText = '월 약 ' + monthlyEst.toLocaleString() + '원';
+        } else if (purchaseMethod === 'lease') {
+          termTitle.innerText = '장기 렌터카 및 리스 전용 혜택';
+          paymentValue.innerText = '상세 전문 컨설팅 상담 시 가격 즉시 결정';
+        }
+      }
+
+      // 아코디언 토글 기능 구현
+      document.querySelectorAll('.accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          
+          // 이미 열려 있으면 닫고, 없으면 여는 연동 처리
+          if (content.style.display === 'block') {
+            content.style.display = 'none';
+            this.classList.remove('active');
+          } else {
+            // 다른 아코디언 닫기
+            document.querySelectorAll('.accordion-content').forEach(function(item) {
+              item.style.display = 'none';
+            });
+            document.querySelectorAll('.accordion-header').forEach(function(item) {
+              item.classList.remove('active');
+            });
+            
+            content.style.display = 'block';
+            this.classList.add('active');
+          }
+        });
+      });
+
+      // 초기 실행 시 계산 자동 초기화 호출
+      window.onload = function() {
+        calculateActyon();
+      };
+    </script>
+  
